@@ -19,7 +19,7 @@ const ProfilePage = ({ user, setUser }) => {
     setTimeout(() => {
       setUser(null);
       navigate("/");
-    }, 2000);
+    }, 1000); // 1 sec
   };
 
   const handleLogout = () => {
