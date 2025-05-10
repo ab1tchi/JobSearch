@@ -13,7 +13,7 @@ body {
   justify-content: center;
   flex-direction: column;
   height: 100vh;
-  margin: 0; /* Add margin 0 for body as React does not reset */
+  margin: 0; 
 }
 
 .container {
@@ -25,7 +25,7 @@ body {
   width: 768px;
   max-width: 100%;
   min-height: 480px;
-  margin: auto; /* center container */
+  margin: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -91,7 +91,10 @@ body {
 
 .form-container {
   position: absolute;
-  height: 150%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 120%;
   transition: all 1s ease-in-out;
 }
 
