@@ -49,8 +49,19 @@ const allJobs = {
     ],
     IlocosNorte: [
       {
-        title: 'Frontend Dev',
-        company: 'AbroadWorks Inc.',
+        title: 'UI DEV',
+        company: 'UI Inc.',
+        rating: 5.0,
+        location: 'Philippines',
+        salary: 'PHP 35,000/month',
+        type: 'Part-time',
+        schedule: 'Flexible schedule',
+        responseTime: 'Urgently hiring'
+      }
+    ],IlocosSur: [
+      {
+        title: 'Laravel Dev',
+        company: 'Cabie Gabion',
         rating: 5.0,
         location: 'Philippines',
         salary: 'PHP 35,000/month',
