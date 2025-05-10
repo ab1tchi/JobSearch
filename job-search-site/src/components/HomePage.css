@@ -8,28 +8,29 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    padding-bottom: 80px; /* Ensure space for the fixed footer */
 }
-  
+
 .top-navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 15px 30px;
 }
-  
+
 .logo {
     font-size: 22px;
     color: #2557a7;
     margin: 0;
 }
-  
+
 .nav-links a {
     margin-left: 20px;
     text-decoration: none;
     color: #333;
     font-weight: 500;
 }
-  
+
 .navbar-line {
     border: none;
     height: 2px;
@@ -42,7 +43,7 @@ body {
     justify-content: center;
     margin-top: 30px;
 }
-  
+
 .search-bar {
     display: flex;
     align-items: center;
@@ -54,7 +55,7 @@ body {
     max-width: 1000px;
     width: 90%;
 }
-  
+
 .search-bar input, .search-bar select {
     flex: 1;
     padding: 12px;
@@ -62,7 +63,7 @@ body {
     border-radius: 6px;
     font-size: 16px;
 }
-  
+
 .search-bar button {
     padding: 12px 20px;
     background-color: #2557a7;
@@ -73,17 +74,17 @@ body {
     font-weight: bold;
     cursor: pointer;
 }
-  
+
 .search-bar button:hover {
     background-color: #1e4e91;
 }
-  
+
 .icon {
     font-size: 18px;
     margin: 0 4px;
     color: #444;
 }
-  
+
 .results-section {
     max-width: 1100px;
     margin: 40px 0 0 0;
@@ -92,7 +93,7 @@ body {
     gap: 24px;
     padding: 0 20px;
 }
-  
+
 .job-card {
     background: #fff;
     padding: 20px;
@@ -103,32 +104,32 @@ body {
     justify-content: space-between;
     height: 100%;
 }
-  
+
 .job-main h4 {
     font-size: 18px;
     font-weight: bold;
     color: #2d2d2d;
     margin-bottom: 5px;
 }
-  
+
 .company {
     font-weight: bold;
     font-size: 14px;
     color: #555;
 }
-  
+
 .rating {
     color: #f39c12;
     margin-left: 8px;
     font-weight: normal;
     font-size: 14px;
 }
-  
+
 .salary {
     margin: 6px 0;
     color: #555;
 }
-  
+
 .tags span {
     background-color: #e4ecf7;
     color: #1a1a1a;
@@ -137,13 +138,13 @@ body {
     border-radius: 20px;
     margin-right: 8px;
 }
-  
+
 .response-time {
     font-size: 14px;
     color: #2557a7;
     margin-top: 8px;
 }
-  
+
 .apply-btn {
     background-color: #2557a7;
     color: white;
@@ -155,15 +156,44 @@ body {
     cursor: pointer;
     margin-top: 10px;
 }
-  
+
 .apply-btn:hover {
     background-color: #1e4e91;
 }
-  
-.results-section:empty::before {
-    content: "No jobs available.";
-    grid-column: 1 / -1;
-    text-align: center;
-    font-size: 18px;
-    color: #777;
-}   
+
+.pagination-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    gap: 20px;
+}
+
+.pagination-footer button {
+    padding: 8px 15px;
+    background-color: #2557a7;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.pagination-footer button:hover {
+    background-color: #1e4e91;
+}
+
+.pagination-footer button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.pagination-footer span {
+    font-size: 16px;
+    color: #555;
+}
