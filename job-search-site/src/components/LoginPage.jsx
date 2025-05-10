@@ -9,7 +9,6 @@ function LoginPage({ onLogin, onSignUp }) {
 
   const handleToggle = () => {
     setIsSignUp(!isSignUp);
-    // Clear inputs on toggle for better UX
     setName('');
     setEmail('');
     setPassword('');
@@ -97,12 +96,12 @@ function LoginPage({ onLogin, onSignUp }) {
         <div className="toggle">
           <div className="toggle-panel toggle-left">
             <h1>Welcome Back!</h1>
-            <p>Enter your personal details to use all of site features</p>
+            <p>Already have an account? click the SIGN IN button below!</p>
             <button className="hidden" onClick={handleToggle}>Sign In</button>
           </div>
           <div className="toggle-panel toggle-right">
             <h1>Hello!</h1>
-            <p>Register with your personal details to use all of site features</p>
+            <p>Don't have an account yet? Register now! click the SIGN UP button below!</p>
             <button className="hidden" onClick={handleToggle}>Sign Up</button>
           </div>
         </div>
