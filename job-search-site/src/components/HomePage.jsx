@@ -9,6 +9,8 @@ function HomePage() {
   const [location, setLocation] = useState('');
   const [results, setResults] = useState(Object.values(allJobs).flat());
   const [selectedJob, setSelectedJob] = useState(null);
+  const [page, setPage] = useState(1);
+  const jobsPerPage = 6;
 
   const locations = ['Tarlac City', 'Manila', 'Cebu', 'Davao', 'IlocosNorte', 'IlocosSur', 'Palawan'];
 
@@ -22,8 +24,16 @@ function HomePage() {
         )
       : jobList;
     setResults(filtered);
+    setPage(1); // Reset to first page when searching
   };
-  
+
+  const paginatedResults = results.slice((page - 1) * jobsPerPage, page * jobsPerPage);
+
+  const handlePagination = (newPage) => {
+    if (newPage < 1 || newPage > Math.ceil(results.length / jobsPerPage)) return;
+    setPage(newPage);
+  };
+
   return (
     <div className="homepage">
       <header className="top-navbar">
@@ -54,7 +64,7 @@ function HomePage() {
       </form>
 
       <div className="results-section">
-        {results.length > 0 ? results.map((job, idx) => (
+        {paginatedResults.length > 0 ? paginatedResults.map((job, idx) => (
           <div className="job-card" key={idx}>
             <div className="job-main">
               <h4>{job.title} | {job.location}</h4>
@@ -76,6 +86,13 @@ function HomePage() {
       {selectedJob && (
         <ApplyPage job={selectedJob} onClose={() => setSelectedJob(null)} />
       )}
+
+      {/* Pagination Controls - Footer */}
+      <div className="pagination-footer">
+        <button onClick={() => handlePagination(page - 1)} disabled={page === 1}>Previous</button>
+        <span>{page}</span>
+        <button onClick={() => handlePagination(page + 1)} disabled={page * jobsPerPage >= results.length}>Next</button>
+      </div>
     </div>
   );
 }
