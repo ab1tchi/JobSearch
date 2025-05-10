@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'; 
 import ApplyPage from './ApplyPage';
 import allJobs from './jobs';
 import './HomePage.css';
@@ -28,8 +29,8 @@ function HomePage() {
       <header className="top-navbar">
         <h2 className="logo">Job Search</h2>
         <nav className="nav-links">
-          <a href="#">Home</a>
-          <a href="#">Company Reviews</a>
+          <Link to="/home">Home</Link>
+          <Link to="/profile">Profile</Link>
         </nav>
       </header>
       <hr className="navbar-line" />
